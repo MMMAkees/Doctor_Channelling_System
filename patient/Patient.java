@@ -38,7 +38,7 @@ public class Patient {
         this.history = history;
     }
 
-    // ---------------- LOGIN VALIDATION ----------------
+    // LOGIN VALIDATION 
     public boolean validateLogin(String u, String p) {
         return username != null && password != null &&
                username.equals(u) && password.equals(p);

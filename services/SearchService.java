@@ -22,12 +22,10 @@ public class SearchService {
             }
         }
 
-        return null; // Not found
+        return null; 
     }
 
-    // -------------------------------
     // Search Doctor by Name
-    // -------------------------------
     public Doctor searchDoctorByName(DoctorList doctorList, String name) {
 
         if (doctorList == null || doctorList.getDoctors().isEmpty()) {
@@ -41,12 +39,10 @@ public class SearchService {
             }
         }
 
-        return null; // Not found
+        return null; 
     }
 
-    // -------------------------------
     // Search Doctor by Specialization
-    // -------------------------------
     public Doctor searchDoctorBySpecialization(DoctorList doctorList, String specialization) {
 
         if (doctorList == null || doctorList.getDoctors().isEmpty()) {

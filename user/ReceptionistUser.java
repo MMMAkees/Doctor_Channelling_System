@@ -92,7 +92,10 @@ public class ReceptionistUser extends User {
             System.out.print("Consultation Fee: ");
             double fee = Double.parseDouble(sc.nextLine());
 
-            Doctor doctor = new Doctor(name, specialization, fee);
+            System.out.print("Time Slot: ");
+            String timeSlot = sc.nextLine();
+
+            Doctor doctor = new Doctor(name, specialization, fee, timeSlot);
             doctorList.addDoctor(doctor);
 
             System.out.println("Doctor added successfully.");

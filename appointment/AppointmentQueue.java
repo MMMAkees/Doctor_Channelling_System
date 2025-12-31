@@ -55,14 +55,31 @@ public class AppointmentQueue {
         return false;
     }
 
-    // Cancel appointment by patient name
-    public boolean cancelAppointment(String patientName) {
-        Appointment removed = cancelAppointmentAndReturn(patientName);
-        return removed != null;
+    // Get all appointments for a specific patient (Used for specific cancellation/reschedule)
+    public Appointment[] getAppointmentsForPatient(String patientName) {
+        int count = 0;
+        // First pass to count matches
+        for (int i = 0; i < size; i++) {
+            int index = (front + i) % capacity;
+            if (queue[index].getPatient().getName().equalsIgnoreCase(patientName)) {
+                count++;
+            }
+        }
+
+        Appointment[] matches = new Appointment[count];
+        int matchIdx = 0;
+        // Second pass to fill the array
+        for (int i = 0; i < size; i++) {
+            int index = (front + i) % capacity;
+            if (queue[index].getPatient().getName().equalsIgnoreCase(patientName)) {
+                matches[matchIdx++] = queue[index];
+            }
+        }
+        return matches;
     }
 
-    // Cancel and return removed appointment
-    public Appointment cancelAppointmentAndReturn(String patientName) {
+    // Cancel and return removed appointment by name
+    public Appointment removeAndReturn(String patientName) {
         if (isEmpty()) return null;
 
         Appointment removed = null;
@@ -74,8 +91,9 @@ public class AppointmentQueue {
             int index = (front + i) % capacity;
             Appointment appt = queue[index];
 
+            // Remove the first appointment found for this patient name
             if (appt.getPatient().getName().equalsIgnoreCase(patientName) && removed == null) {
-                removed = appt; // remove first match
+                removed = appt; 
             } else {
                 newQueue[++newRear] = appt;
                 newSize++;
@@ -92,9 +110,35 @@ public class AppointmentQueue {
         return removed;
     }
 
-    // Alias method
-    public Appointment removeAndReturn(String patientName) {
-        return cancelAppointmentAndReturn(patientName);
+    // Cancel a specific appointment object (Useful for choosing from a list)
+    public boolean cancelSpecificAppointment(Appointment toCancel) {
+        if (isEmpty() || toCancel == null) return false;
+
+        boolean found = false;
+        Appointment[] newQueue = new Appointment[capacity];
+        int newRear = -1;
+        int newSize = 0;
+
+        for (int i = 0; i < size; i++) {
+            int index = (front + i) % capacity;
+            Appointment appt = queue[index];
+
+            if (appt == toCancel && !found) {
+                found = true; // Skip this one
+            } else {
+                newQueue[++newRear] = appt;
+                newSize++;
+            }
+        }
+
+        if (found) {
+            this.queue = newQueue;
+            this.front = 0;
+            this.rear = newRear;
+            this.size = newSize;
+        }
+
+        return found;
     }
 
     // Display all appointments
@@ -111,16 +155,10 @@ public class AppointmentQueue {
         }
     }
 
-    // Check if empty
     public boolean isEmpty() { return size == 0; }
-
-    // Check if full
     public boolean isFull() { return size == capacity; }
-
-    // Get current size
     public int getSize() { return size; }
 
-    // Get appointment at specific index (for viewing without removing)
     public Appointment getAtIndex(int index) {
         if (index < 0 || index >= size) return null;
         return queue[(front + index) % capacity];

@@ -5,11 +5,10 @@ import patient.Patient;
 
 public class Appointment {
 
-    private Patient patient;     // Patient who booked the appointment
-    private Doctor doctor;       // Doctor assigned to appointment
-    private String timeSlot;     // Selected time slot
+    private Patient patient;     
+    private Doctor doctor;       
+    private String timeSlot;     
 
-    // Constructor
     public Appointment(Patient patient, Doctor doctor, String timeSlot) {
         this.patient = patient;
         this.doctor = doctor;
@@ -38,9 +37,6 @@ public class Appointment {
         this.doctor = doctor;
     }
 
-    public void setTimeSlot(String timeSlot) {
-        this.timeSlot = timeSlot;
-    }
 
     @Override
     public String toString() {

@@ -20,7 +20,8 @@ public class NotificationService {
     public void notifyDoctorAdded(Doctor doctor) {
         System.out.println("\n[NOTIFICATION] Doctor Added Successfully!");
         System.out.println("Doctor: " + doctor.getDoctorName() + 
-                           ", Specialization: " + doctor.getSpecialization());
+                           ", Specialization: " + doctor.getSpecialization() + ", Consultation Fee: Rs." + doctor.getConsultationFee() +
+                           ", Time Slot: " + doctor.getTimeSlot());
     }
 
     // ----------------------------
@@ -38,9 +39,7 @@ public class NotificationService {
         System.out.println("\n[SUCCESS] " + message);
     }
 
-    // ----------------------------
     // Notify Warning
-    // ----------------------------
     public void warning(String message) {
         System.out.println("\n[WARNING] " + message);
     }
@@ -50,5 +49,12 @@ public class NotificationService {
     // ----------------------------
     public void error(String message) {
         System.out.println("\n[ERROR] " + message);
+    }
+
+    // ----------------------------
+    // ADD THIS NEW METHOD: Notify Info Message
+    // ----------------------------
+    public void info(String message) {
+        System.out.println("\n[INFO] " + message);
     }
 }

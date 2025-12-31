@@ -1,0 +1,11 @@
+username,password,name,age,mobile,email,city,medical_history
+Samthi,sam123,Samthi,35,0712345678,sam234@email.com,Colombo,Hypertension diagnosed 2020
+jane_smith,jane456,Jane Smith,28,0723456789,jane.smith@email.com,Kandy,Asthma since childhood
+robert_brown,robert789,Robert Brown,45,0734567890,robert.b@email.com,Galle,Type 2 Diabetes
+sarah_chen,sarah101,Sarah Chen,31,0745678901,sarah.chen@email.com,Negombo,No significant medical history
+michael_wilson,mike202,Michael Wilson,52,0756789012,m.wilson@email.com,Jaffna,High blood pressure
+emily_davis,emily303,Emily Davis,26,0767890123,emily.d@email.com,Matara,Migraine headaches
+david_miller,david404,David Miller,39,0778901234,david.m@email.com,Ratnapura,Seasonal allergies
+lisa_jackson,lisa505,Lisa Jackson,43,0789012345,lisa.j@email.com,Anuradhapura,Arthritis
+kevin_nguyen,kevin606,Kevin Nguyen,33,0790123456,kevin.n@email.com,Badulla,Anxiety disorder
+amanda_rodriguez,amanda707,Amanda Rodriguez,29,0711122233,amanda.r@email.com,Trincomalee,No medical history
