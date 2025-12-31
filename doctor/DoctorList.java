@@ -4,13 +4,12 @@ import java.util.ArrayList;
 
 public class DoctorList {
 
-    private ArrayList<Doctor> doctors;  // Stores all doctors added by receptionist
+    private ArrayList<Doctor> doctors; 
 
     public DoctorList() {
         doctors = new ArrayList<>();
     }
 
-    // Add a new doctor (done by receptionist)
     public void addDoctor(Doctor doctor) {
         doctors.add(doctor);
         System.out.println("Doctor added successfully: " + doctor.getDoctorName());
@@ -28,10 +27,18 @@ public class DoctorList {
             return;
         }
 
-        System.out.println("----- Available Doctors -----");
-        for (Doctor d : doctors) {
-            System.out.println(d);
+        System.out.println("\n--- Available Doctors List ---");
+        System.out.println("+-----+----------------------+----------------------+------------+------------+");
+        System.out.println("| No. | Doctor Name          | Specialization       | Fee (Rs.)  | Time Slot  |");
+        System.out.println("+-----+----------------------+----------------------+------------+------------+");
+
+        for (int i = 0; i < doctors.size(); i++) {
+            Doctor d = doctors.get(i);
+            // Displaying doctor details with a placeholder or actual time slot data
+            System.out.printf("| %-3d | %-20s | %-20s | %-10.2f | %-10s |\n",
+                    (i + 1), d.getDoctorName(), d.getSpecialization(), d.getConsultationFee(), "09:00 AM");
         }
+        System.out.println("+-----+----------------------+----------------------+------------+------------+");
     }
 
     // Search doctor by specialization

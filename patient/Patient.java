@@ -2,11 +2,8 @@ package patient;
 
 public class Patient {
 
-    // ---------------- NEW FIELDS (Login) ----------------
     private String username;
     private String password;
-
-    // ---------------- EXISTING FIELDS ----------------
     private String name;
     private int age;
     private String mobile;
@@ -14,9 +11,7 @@ public class Patient {
     private String city;
     private String history;
 
-    // ---------------- OLD CONSTRUCTOR (UNCHANGED) ----------------
-    public Patient(String name, int age, String mobile,
-                   String email, String city, String history) {
+    public Patient(String name, int age, String mobile, String email, String city, String history) {
         this.name = name;
         this.age = age;
         this.mobile = mobile;

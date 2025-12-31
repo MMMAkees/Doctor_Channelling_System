@@ -2,7 +2,7 @@ package patient;
 
 public class PatientStack {
 
-    private PatientNode top;   // Top of the stack
+    private PatientNode top;
 
     public PatientStack() {
         this.top = null;
@@ -12,8 +12,8 @@ public class PatientStack {
     public void push(Patient patient) {
 
         PatientNode newNode = new PatientNode(patient);
-        newNode.setNext(top);      // Link new node to previous top
-        top = newNode;             // New node becomes top
+        newNode.setNext(top);
+        top = newNode;
     }
 
     // Pop the newest patient from the stack
@@ -46,21 +46,36 @@ public class PatientStack {
     }
 
     // Display patients from newest → oldest
+    // Display patients from newest → oldest in a table format
     public void displayNewestToOldest() {
-
         if (isEmpty()) {
             System.out.println("No patient records available.");
             return;
         }
 
-        PatientNode temp = top;
-
-        System.out.println("Patient List (Newest → Oldest):");
+        int count = size();
+        patient.Patient[] patientArray = new patient.Patient[count]; 
+    
+        patient.PatientNode temp = top;
+        int index = 0;
         while (temp != null) {
-            System.out.println(temp.getData());
+            patientArray[index++] = temp.getData();
             temp = temp.getNext();
         }
+
+        System.out.println("\n--- Registered Patient List (Newest to Oldest) ---");
+        System.out.println("+-----+----------------------+-----+-------------------------+");
+        System.out.println("| No. | Name                 | Age | Email                   |");
+        System.out.println("+-----+----------------------+-----+-------------------------+");
+
+        for (int i = 0; i < patientArray.length; i++) {
+            patient.Patient p = patientArray[i];
+            System.out.printf("| %-3d | %-20s | %-3d | %-23s |\n",
+                (i + 1), p.getName(), p.getAge(), p.getEmail());
+        }
+        System.out.println("+-----+----------------------+-----+-------------------------+");
     }
+    
 
     // Count total patients in the stack
     public int size() {

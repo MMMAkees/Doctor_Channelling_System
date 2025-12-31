@@ -7,7 +7,6 @@ public class Doctor {
     private double consultationFee;
     private String timeSlot;
 
-    // Add timeSlot parameter to constructor
     public Doctor(String doctorName, String specialization, double consultationFee, String timeSlot) {
         this.doctorName = doctorName;
         this.specialization = specialization;

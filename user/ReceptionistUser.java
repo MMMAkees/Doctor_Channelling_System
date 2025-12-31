@@ -114,7 +114,7 @@ public class ReceptionistUser extends User {
         System.out.print("Enter Patient Name to Cancel: ");
         String name = sc.nextLine();
 
-        Appointment cancelled = appointmentQueue.cancelAppointmentAndReturn(name);
+        Appointment cancelled = appointmentQueue.removeAndReturn(name);
 
         if (cancelled != null) {
             historyStack.push(cancelled);

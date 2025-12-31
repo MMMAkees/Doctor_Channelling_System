@@ -79,7 +79,7 @@ public class AppointmentQueue {
     }
 
     // Cancel and return removed appointment by name
-    public Appointment removeAndReturn(String patientName) {
+        public Appointment removeAndReturn(String patientName) {
         if (isEmpty()) return null;
 
         Appointment removed = null;
@@ -91,7 +91,6 @@ public class AppointmentQueue {
             int index = (front + i) % capacity;
             Appointment appt = queue[index];
 
-            // Remove the first appointment found for this patient name
             if (appt.getPatient().getName().equalsIgnoreCase(patientName) && removed == null) {
                 removed = appt; 
             } else {
@@ -124,7 +123,7 @@ public class AppointmentQueue {
             Appointment appt = queue[index];
 
             if (appt == toCancel && !found) {
-                found = true; // Skip this one
+                found = true;
             } else {
                 newQueue[++newRear] = appt;
                 newSize++;
