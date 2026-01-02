@@ -9,12 +9,10 @@ public class User {
         this.password = password;
     }
 
-    // Check login credentials
     public boolean login(String u, String p) {
         return username.equals(u) && password.equals(p);
     }
 
-    // Getters
     public String getUsername() {
         return username;
     }
@@ -23,7 +21,6 @@ public class User {
         return password;
     }
 
-    // Setters
     public void setUsername(String username) {
         this.username = username;
     }

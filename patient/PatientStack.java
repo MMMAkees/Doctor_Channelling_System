@@ -14,6 +14,7 @@ public class PatientStack {
         PatientNode newNode = new PatientNode(patient);
         newNode.setNext(top);
         top = newNode;
+            
     }
 
     // Pop the newest patient from the stack

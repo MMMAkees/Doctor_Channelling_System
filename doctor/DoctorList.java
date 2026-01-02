@@ -34,7 +34,6 @@ public class DoctorList {
 
         for (int i = 0; i < doctors.size(); i++) {
             Doctor d = doctors.get(i);
-            // Displaying doctor details with a placeholder or actual time slot data
             System.out.printf("| %-3d | %-20s | %-20s | %-10.2f | %-10s |\n",
                     (i + 1), d.getDoctorName(), d.getSpecialization(), d.getConsultationFee(), "09:00 AM");
         }

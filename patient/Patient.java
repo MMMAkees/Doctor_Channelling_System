@@ -20,7 +20,7 @@ public class Patient {
         this.history = history;
     }
 
-    // ---------------- NEW CONSTRUCTOR (WITH LOGIN) ----------------
+
     public Patient(String username, String password, String name, int age, String mobile, String email, String city, String history) {
 
         this.username = username;
@@ -33,13 +33,13 @@ public class Patient {
         this.history = history;
     }
 
-    // LOGIN VALIDATION 
+
     public boolean validateLogin(String u, String p) {
         return username != null && password != null &&
                username.equals(u) && password.equals(p);
     }
 
-    // ---------------- GETTERS ----------------
+
     public String getUsername() {
         return username;
     }
@@ -72,7 +72,7 @@ public class Patient {
         return history;
     }
 
-    // ---------------- OPTIONAL SETTERS ----------------
+  
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
@@ -89,7 +89,7 @@ public class Patient {
         this.history = history;
     }
 
-    // ---------------- DISPLAY ----------------
+  
     @Override
     public String toString() {
         return "Patient Name: " + name +

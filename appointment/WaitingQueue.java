@@ -53,19 +53,15 @@ public class WaitingQueue {
         }
     }
 
-    // Check if waiting list is empty
     public boolean isEmpty() { return size == 0; }
 
-    // Check if waiting list is full
     public boolean isFull() { return size == capacity; }
 
-    // Get patient at index (for checking waiting list without dequeuing)
     public Patient getAtIndex(int index) {
         if (index < 0 || index >= size) return null;
         return queue[(front + index) % capacity];
     }
 
-    // Get current size of waiting list
     public int getSize() {
         return size;
     }

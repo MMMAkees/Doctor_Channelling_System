@@ -4,7 +4,7 @@ import patient.Patient;
 
 public class SortingService {
 
-    // Display patients in table format with No, Name, Age, Email
+
     public void displayPatientsTable(Patient[] arr, String title) {
         System.out.println("\n" + title);
         System.out.println("+-----+----------------------+-----+-------------------------+");
@@ -20,9 +20,7 @@ public class SortingService {
         System.out.println("+-----+----------------------+-----+-------------------------+");
     }
 
-    // ---------------------------
     // Bubble Sort by Age
-    // ---------------------------
     public void bubbleSortByAge(Patient[] arr) {
         displayPatientsTable(arr, "Before Bubble Sort");
 
@@ -42,9 +40,8 @@ public class SortingService {
         displayPatientsTable(arr, "After Bubble Sort (Sorted by Age)");
     }
 
-    // ---------------------------
+
     // Selection Sort by Age
-    // ---------------------------
     public void selectionSortByAge(Patient[] arr) {
         displayPatientsTable(arr, "Before Selection Sort");
 
